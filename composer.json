@@ -26,7 +26,7 @@
     "require": {
         "scancode-system/scancode-base-module":"^2.0",
         "scancode-system/ipi-module":"^2.0",
-        "scancode-system/product-stock-module":"^2.0",
+        //"scancode-system/product-stock-module":"^2.0",
         "scancode-system/price-list-module":"^2.0"
     }
 }
