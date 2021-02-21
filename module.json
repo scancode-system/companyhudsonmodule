@@ -1,0 +1,13 @@
+{
+    "name": "CompanyHudson",
+    "alias": "companyhudson",
+    "description": "",
+    "keywords": [],
+    "order": 0,
+    "providers": [
+        "Modules\\CompanyHudson\\Providers\\CompanyHudsonServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}

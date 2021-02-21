@@ -1,0 +1,32 @@
+{
+    "name": "scancode-system/company-hudson-module",
+    "description": "",
+    "authors": [
+        {
+            "name": "Nicolas Widart",
+            "email": "n.widart@gmail.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Modules\\CompanyHudson\\Providers\\CompanyHudsonServiceProvider"
+            ],
+            "aliases": {
+
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\CompanyHudson\\": ""
+        }
+    },
+    "type": "laravel-module",
+    "require": {
+        "scancode-system/scancode-base-module":"^2.0",
+        "scancode-system/ipi-module":"^2.0",
+        "scancode-system/product-stock-module":"^2.0",
+        "scancode-system/price-list-module":"^2.0"
+    }
+}
