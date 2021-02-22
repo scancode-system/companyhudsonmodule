@@ -10,7 +10,7 @@ class HudsonApi {
     private $senha;
 
     public function __construct() {
-                $this->url = 'http://online.hudsondobrasil.com.br:1010/restteste';
+        $this->url = 'http://online.hudsondobrasil.com.br:1010/restteste';
         //$this->url = 'http://online.hudsondobrasil.com.br:1010/restoficial';
         $this->login = 'webservice';
         $this->senha = 'web@hudson321';

@@ -24,7 +24,7 @@ class CreateHudsonPedidosTable extends Migration
 
             
             $table->integer('status');
-            $table->string('message');
+            $table->text('message');
             $table->string('orcamento')->nullable()->default(null);
             
         });

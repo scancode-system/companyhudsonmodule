@@ -44,9 +44,9 @@ class HudsonController extends Controller {
 		$data = $hudson_api->import($pedido);
 
 		try {
-			$hudson_pedido = HudsonPedido::where('id_pedido', $pedido->id_pedido)->first();
+			$hudson_pedido = HudsonPedido::where('order_id', $pedido->id)->first();
 			if(!$hudson_pedido)
-				HudsonPedido::create(['id_pedido' => $pedido->id_pedido, 'status' => $data['status'], 'message' => $data['message'], 'orcamento' => $data['orcamento']]);
+				HudsonPedido::create(['order_id' => $pedido->id, 'status' => $data['status'], 'message' => $data['message'], 'orcamento' => $data['orcamento']]);
 			else {
 				$hudson_pedido->update(['status' => $data['status'], 'message' => $data['message'], 'orcamento' => $data['orcamento']]);
 			}
