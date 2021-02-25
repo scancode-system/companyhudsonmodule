@@ -82,7 +82,7 @@
 								@foreach ($hudson_pedidos_sucesso as $hudson_pedido)
 								<tr>
 									<td>
-										<a href="{{ route('pedido.show', ['pedidoId' => $hudson_pedido->id_pedido, 'page' => 2]) }}">{{ $hudson_pedido->id_pedido }}</a>
+										{{ $hudson_pedido->order_id }}
 									</td>
 									<td>
 										{{ $hudson_pedido->orcamento }}
@@ -117,7 +117,7 @@
 								@foreach ($hudson_pedidos_waiting as $hudson_pedido)
 								<tr>
 									<td>
-										<a href="{{ route('pedido.show', ['pedidoId' => $hudson_pedido->id_pedido, 'page' => 2]) }}">{{ $hudson_pedido->id_pedido }}</a>
+										{{ $hudson_pedido->order_id }}
 									</td>
 									<td>
 										{{ $hudson_pedido->message }}
@@ -155,7 +155,7 @@
 								@foreach ($hudson_pedidos_erro as $hudson_pedido)
 								<tr>
 									<td>
-										{{ $hudson_pedido->id_pedido }}
+										{{ $hudson_pedido->order_id }}
 									</td>
 									<td>
 										{{ $hudson_pedido->status }}

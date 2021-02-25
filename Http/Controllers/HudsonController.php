@@ -3,15 +3,16 @@
 //namespace App\Package\Hudson\controllers;
 namespace Modules\CompanyHudson\Http\Controllers;
 
-use App\Http\Controllers\BaseController;
-use Modules\CompanyHudson\Entities\HudsonPedido;
-//use App\Package\Hudson\models\Pedido;
-use Modules\CompanyHudson\Entities\Order;
-//use App\Package\Hudson\services\HudsonApi;
-use Modules\CompanyHudson\Services\HudsonApi;
-use Illuminate\Http\Request;
 use Excption;
+use Exception;
+//use App\Package\Hudson\models\Pedido;
+use Illuminate\Http\Request;
+//use App\Package\Hudson\services\HudsonApi;
 use Illuminate\Routing\Controller;
+use App\Http\Controllers\BaseController;
+use Modules\CompanyHudson\Entities\Order;
+use Modules\CompanyHudson\Services\HudsonApi;
+use Modules\CompanyHudson\Entities\HudsonPedido;
 
 class HudsonController extends Controller {
 
@@ -50,14 +51,14 @@ class HudsonController extends Controller {
 			else {
 				$hudson_pedido->update(['status' => $data['status'], 'message' => $data['message'], 'orcamento' => $data['orcamento']]);
 			}
-		} catch(Excption $e){
+		} catch(Exception $e){
 			
 		}
 
 		if($data['status'] == 201){
 			return back()->with('message', 'Pedido Integrado com sucesso.');
 		} elseif($data['status'] == 0) {
-			return back()->with('warn', 'Pedido não pode ser cadastrado, pois o cliente é novo, aguardando a validação do mesmo.');
+			return back()->with('warn', 'Pedido não pode ser cadastrado, pois o cliente é novo ou aguardando a validação do mesmo.');
 		} else {
 			return back()->withErrors('Falha na integração: '.$data['message']);
 		}
